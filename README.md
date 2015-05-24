@@ -1,1 +1,0 @@
-# atom-paynetz-ruby-sdk
