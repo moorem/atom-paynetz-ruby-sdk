@@ -1,17 +1,16 @@
 module Atom
   module Paynetz
     module Configuration
-      VALID_CONNECTION_KEYS = [:endpoint, :login_id, :product_id, :password, :method].freeze
+      VALID_CONNECTION_KEYS = [:endpoint, :login, :prodid, :pass, :method].freeze
       VALID_OPTIONS_KEYS    = [:format].freeze
       VALID_CONFIG_KEYS     = VALID_CONNECTION_KEYS + VALID_OPTIONS_KEYS
  
       DEFAULT_ENDPOINT    = 'http://203.114.240.183'
       DEFAULT_METHOD      = :post
-      #DEFAULT_USER_AGENT  = "Awesome API Ruby Gem #{Awesome::VERSION}".freeze
- 
-      #DEFAULT_API_KEY      = nil
-      DEFAULT_FORMAT       = :xml
- 
+      DEFAULT_FORMAT      = :xml
+      DEFAULT_PRODID      = "NSE"
+      
+      
       # Build accessor methods for every config options so we can do this, for example:
       #   Awesome.format = :xml
       attr_accessor *VALID_CONFIG_KEYS
@@ -24,6 +23,7 @@ module Atom
       def reset
         self.endpoint   = DEFAULT_ENDPOINT
         self.method     = DEFAULT_METHOD
+        self.prodid     = DEFAULT_PRODID
         #self.user_agent = DEFAULT_USER_AGENT
  
         #self.api_key    = DEFAULT_API_KEY

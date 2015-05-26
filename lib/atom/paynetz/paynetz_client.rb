@@ -4,19 +4,17 @@ module Atom
     
     class Client
  
-      # Define the same set of accessors as the Awesome module
       attr_accessor *Configuration::VALID_CONFIG_KEYS
  
       def initialize(options={})
-        # Merge the config values from the module and those passed
-        # to the client.
-        merged_options = Paynetz::Api.options.merge(options)
-      
-        # Copy the merged values to this client and ignore those
-        # not part of our configuration
+        merged_options = Atom::Paynetz.options.merge(options)
         Configuration::VALID_CONFIG_KEYS.each do |key|
           send("#{key}=", merged_options[key])
         end
+      end
+           
+      def get_token options
+        
       end
  
     end # Client
