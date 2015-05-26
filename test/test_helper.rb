@@ -1,4 +1,4 @@
-require './lib/paynetz/paynetz'
+require './lib/atom/paynetz'
 require 'minitest/autorun'
 require 'minitest/spec'
 require 'base64'

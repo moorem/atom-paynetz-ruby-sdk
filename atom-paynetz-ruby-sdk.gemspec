@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'paynetz/api/version'
+require 'atom/paynetz/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "atom-paynetz-ruby-sdk"
-  spec.version       = Atom::Paynetz::Ruby::Sdk::VERSION
+  spec.version       = Atom::Paynetz::VERSION
   spec.authors       = ["Ankur Gupta"]
   spec.email         = ["ankur@moorem.com"]
   spec.summary       = %q{Online payment gateway solution in India with Atom}
